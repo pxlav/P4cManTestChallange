@@ -1649,6 +1649,7 @@ RectTransform:
   - {fileID: 815361420}
   - {fileID: 96692538}
   - {fileID: 2059893342}
+  - {fileID: 1340463906}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2427,6 +2428,7 @@ Transform:
   - {fileID: 1707602299}
   - {fileID: 807266360}
   - {fileID: 519420032}
+  - {fileID: 2022074814}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2920,13 +2922,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340463903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -399.99997, y: -225.08179, z: 0}
+  m_LocalScale: {x: 0.87241, y: 0.87241, z: 0.87241}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 738675308}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1362427717
 PrefabInstance:
@@ -4188,14 +4190,9 @@ MonoBehaviour:
   pointsValue: 42
   collectedPoints: 0
   waitTimer: 0
-  uiTexts:
-  - {fileID: 1683367965}
-  - {fileID: 815361419}
-  - {fileID: 96692537}
-  isLost: 0
+  isEnd: 0
   endTimer: 0
   scores: 0
-  t_scores: {fileID: 2059893343}
 --- !u!4 &1866937738
 Transform:
   m_ObjectHideFlags: 0
@@ -4465,6 +4462,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &2022074813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022074814}
+  - component: {fileID: 2022074815}
+  m_Layer: 0
+  m_Name: Scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022074814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022074813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4418383, y: -2.4040349, z: -0.74094975}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 961867804}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022074815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022074813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf4164d2cbefe74988c0e176173b431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scores: 0
+  t_scores: {fileID: 2059893343}
+  wichTextIsOn: 0
+  scoreObj: {fileID: 2059893341}
+  readyWonLose:
+  - {fileID: 1683367965}
+  - {fileID: 815361419}
+  - {fileID: 96692537}
 --- !u!1001 &2055070593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4539,7 +4588,7 @@ GameObject:
   - component: {fileID: 2059893344}
   - component: {fileID: 2059893343}
   m_Layer: 5
-  m_Name: YOULOSE (1)
+  m_Name: SCORES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

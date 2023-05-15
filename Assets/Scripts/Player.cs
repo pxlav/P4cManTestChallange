@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-
 public class Player : MonoBehaviour
 {
     [SerializeField] float walkOffset;
@@ -16,32 +14,28 @@ public class Player : MonoBehaviour
     public int pointsValue;
     public int collectedPoints;
     public float waitTimer;
-    public GameObject[] uiTexts; // 0-ready;1-win;2-lose
-    public bool isLost;
+    public bool isEnd;
     [SerializeField] float endTimer;
+    public UIController ui_Controller;
     public int scores;
-    public TextMeshProUGUI t_scores;
     private void Start()
     {
         scores = 0;
         canWalk = false;
-        isLost = false;
+        isEnd = false;
         waitTimer = 3.0f;
         endTimer = 3.0f;
-        uiTexts[0].SetActive(true);
-        uiTexts[1].SetActive(false);
-        uiTexts[2].SetActive(false);
+        ui_Controller.wichTextIsOn = 0;
     }
     private void Update()
     {
-        t_scores.text = "Scores: " + scores.ToString();
         if(waitTimer > 0 && canWalk == false)
         {
             waitTimer -= Time.deltaTime;
             if(waitTimer <= 0)
             {
-                uiTexts[0].SetActive(false);
                 canWalk = true;
+                ui_Controller.wichTextIsOn = 3;
             }
         }
         if (canWalk == true)
@@ -108,7 +102,7 @@ public class Player : MonoBehaviour
         {
             GameWin();
         }
-        if(isLost == true)
+        if(isEnd == true)
         {
             canWalk = false;
             endTimer -= Time.deltaTime;
@@ -186,13 +180,14 @@ public class Player : MonoBehaviour
     }
     void GameWin()
     {
-        uiTexts[1].SetActive(true);
+        ui_Controller.wichTextIsOn = 1;
+        isEnd = true;
         Debug.Log("YOU WON!");
     }
     void GameLose()
     {
-        isLost = true;
-        uiTexts[2].SetActive(true);
+        ui_Controller.wichTextIsOn = 2;
+        isEnd = true;
         Debug.Log("YOU LOSE :( ");
     }
 }

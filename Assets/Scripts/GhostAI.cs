@@ -23,7 +23,7 @@ public class GhostAI : MonoBehaviour
 
     private void Update()
     {
-        if(canWalk == true && p_player.isLost == false)
+        if(canWalk == true && p_player.isEnd == false)
         {
             this.transform.Translate(Vector3.left / walkOffset);
         }
