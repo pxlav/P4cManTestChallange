@@ -51,13 +51,27 @@ public class Player : MonoBehaviour
         {
             wichSideRotate = 3;
         }
-
         if (wichSideRotate < 0)
         {
             wichSideRotate = 0;
         }
-
-        while(hitedRotator == true)
+        if(rotateValue == 0 && Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ChangeDirection(2);
+        }
+        if (rotateValue == -90 && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            ChangeDirection(3);
+        }
+        if (rotateValue == -180 && Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ChangeDirection(0);
+        }
+        if (rotateValue == 90 && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            ChangeDirection(1);
+        }
+        while (hitedRotator == true)
         {
             canWalk = false;
             if (rotatorHit.wichSideRotate[0] == true)
@@ -131,6 +145,7 @@ public class Player : MonoBehaviour
             rotateValue = 90;
         }
         this.transform.rotation = Quaternion.Euler(0, 0, rotateValue);
+        Debug.Log(rotateValue);
     }
     private void Controls()
     {

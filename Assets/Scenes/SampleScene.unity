@@ -4192,6 +4192,7 @@ MonoBehaviour:
   waitTimer: 0
   isEnd: 0
   endTimer: 0
+  ui_Controller: {fileID: 2022074815}
   scores: 0
 --- !u!4 &1866937738
 Transform:
@@ -4506,7 +4507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf4164d2cbefe74988c0e176173b431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scores: 0
+  p_player: {fileID: 1866937737}
   t_scores: {fileID: 2059893343}
   wichTextIsOn: 0
   scoreObj: {fileID: 2059893341}

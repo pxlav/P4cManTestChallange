@@ -5,7 +5,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public int scores;
+    public Player p_player;
     public TextMeshProUGUI t_scores;
     public int wichTextIsOn; // 0-none;1-ready;2-youwon;3-youlose
     public GameObject scoreObj;
@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+        t_scores.text = p_player.scores.ToString();
         if(wichTextIsOn == 0)
         {
             readyWonLose[0].SetActive(true);
