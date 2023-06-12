@@ -14,6 +14,7 @@ public class GhostAI : MonoBehaviour
     public GameObject ghostDamageObject;
     public float waitTimer;
     public Player p_player;
+    public UIController ui_Controller;
     private void Start()
     {
         canWalk = false;
@@ -29,7 +30,7 @@ public class GhostAI : MonoBehaviour
         }
         this.transform.rotation = Quaternion.Euler(0, 0, rotateValue);
         ghostDamageObject.transform.position = this.transform.position;
-        if(waitTimer > 0 && canWalk == false)
+        if(waitTimer > 0 && canWalk == false && ui_Controller.isMenuOn == false)
         {
             waitTimer -= Time.deltaTime;
             if(waitTimer <= 0)

@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        if(waitTimer > 0 && canWalk == false)
+        if(waitTimer > 0 && canWalk == false && ui_Controller.isMenuOn == false)
         {
             waitTimer -= Time.deltaTime;
             if(waitTimer <= 0)
